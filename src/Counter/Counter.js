@@ -2,9 +2,15 @@ import React from "react";
 import './Counter.css';
 
 class Counter extends React.Component {
+    static defaultProps = {
+        initialValue: 0,
+    }
+    // static propTypes = {
+    //     initialValue: PropTypes.number,
+    // }
 // свойство экземляра
     state = {
-        value: 0,
+        value: this.props.initialValue,
     }
     // Это то же самое что и через конструктор
     // constructor() {
@@ -17,19 +23,16 @@ class Counter extends React.Component {
 // обьявление публичного свойства;
     handleIncrement = ()=>  {
         console.log('Кликнули в увеличить');
-        this.setState(prevState => {
-            return {
+        // использую стрелочную ф-цию с параметром "prevState" что бы перезаписать старое значение
+        this.setState(prevState => ({
             value: prevState.value + 1
-            }
-       })
+        }))
     }
     handleDecrement = ()=> {
         console.log('Кликнули в уменьшить');
-        this.setState(prevState => {
-            return {
-                value: prevState.value - 1
-            }
-        })
+        this.setState(prevState => ({ 
+            value: prevState.value - 1 
+        }))
     }
 
     render() {
