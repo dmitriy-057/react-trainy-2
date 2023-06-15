@@ -1,9 +1,11 @@
 import React from "react";
-import Counter from "./Counter/Counter";
+// import Counter from "./Counter/Counter";
+import Dropdown from "./Dropdown/Dropdown";
 
 const App = () => (
     <>
-    <Counter />
+    {/* <Counter /> */}
+    <Dropdown />
     </>
 )
 
