@@ -1,0 +1,5 @@
+[
+    { "id": "td-1", "text":"Выучить основы Реакт","completed": true},
+    { "id": "td-2", "text":"Разобраться с Реакт Раутер","completed": false},
+    { "id": "td-3", "text":"Пережить Редакс","completed": false}
+]
