@@ -3,6 +3,7 @@ import React, { Component } from "react";
 // import Dropdown from "./Dropdown";
 // import ColorPicker from './ColorPicker';
 // import TodoList from "./TodoList";
+import Form from "./Form";
 import initialTodos from "./todos.json";
 
 // const colorPickerOptions = [
@@ -16,27 +17,23 @@ import initialTodos from "./todos.json";
 class App extends Component {
   state = {
     todos: initialTodos,
-    inputValue: "",
-  }
-  handleInputChange = event => {
-    console.log(event.currentTarget.value);
-
-    this.setState({inputValue: event.currentTarget.value})
   }
 
-  deleteTodo = todoId => {
-    this.setState(prevState => ({
-      todos: prevState.todos.filter(todo => todo.id !== todoId)
-    }))
+  formSubmitHandler = data => {
+    console.log('data', data);
   }
+  // deleteTodo = todoId => {
+  //   this.setState(prevState => ({
+  //     todos: prevState.todos.filter(todo => todo.id !== todoId)
+  //   }))
+  // }
+
   render() {
     // const {todos} = this.state;
     // const completedTodos = todos.filter(todo => todo.completed);
     // console.log(completedTodos.length)
     return (
       <>
-     <input type="text" value={this.state.inputValue} onChange={this.handleInputChange}/>
-     
       {/* <Counter /> */}
       {/* <Dropdown /> */}
       {/* <ColorPicker options={colorPickerOptions} /> */}
@@ -45,6 +42,7 @@ class App extends Component {
         <p>Кол-во выполненых туду:</p>
       </div>
       <TodoList todos={todos} onDeleteTodo={this.deleteTodo}/> */}
+      <Form onSubmit={this.formSubmitHandler}/>
       </>
     )
   }
