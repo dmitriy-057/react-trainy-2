@@ -6,7 +6,7 @@ class Form extends Component {
       name: "",
       surname: "",
       experience: "junior",
-      licence: false,
+      lisence: false,
   };
 
 loginInputId = shortid.generate();
@@ -31,9 +31,9 @@ handleSubmit = event => {
     this.reset();
 }
 
-handleLicenseChange = event => {
+handleLisenceChange = event => {
   console.log(event.currentTarget.checked);
-  this.setState({licence: event.currentTarget.checked})
+  this.setState({lisence: event.currentTarget.checked})
 }
 reset = () => {
   this.setState({   
@@ -95,14 +95,14 @@ render() {
         <label>
           <input 
           type="checkbox" 
-          name="licence"
-          checked={this.state.licence}
-          onChange={this.handleLicenseChange}
+          name="lisence"
+          checked={this.state.lisence}
+          onChange={this.handleLisenceChange}
 
           /> Agreed with clauses
         </label>
         <br/>
-        <button type="submit">Submit</button>
+        <button type="submit" disabled={!this.state.lisence}>Submit</button>
     </form>
     )
 }

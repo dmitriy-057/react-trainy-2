@@ -13,4 +13,9 @@ width: 600px;
     margin-right: 10px;
     margin-bottom: 0;
 }
+.TodoList__checkbox {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+  }
 

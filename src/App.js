@@ -3,7 +3,8 @@ import React, { Component } from "react";
 // import Dropdown from "./Dropdown";
 // import ColorPicker from './ColorPicker';
 // import TodoList from "./TodoList";
-import Form from "./Form";
+// import Form from "./Form";
+import ToDoEditor from "./ToDoEditor/ToDoEditor"
 import initialTodos from "./todos.json";
 
 // const colorPickerOptions = [
@@ -19,12 +20,21 @@ class App extends Component {
     todos: initialTodos,
   }
 
-  formSubmitHandler = data => {
-    console.log('data', data);
-  }
+  // formSubmitHandler = data => {
+  //   console.log('data', data);
+  // }
   // deleteTodo = todoId => {
   //   this.setState(prevState => ({
   //     todos: prevState.todos.filter(todo => todo.id !== todoId)
+  //   }))
+  // }
+
+  // toggleComplited = todoId => {
+  //   console.log('todoId', todoId);
+  //   this.setState(prevState => ({
+  //    todos: prevState.todos.map(todo => 
+  //     todo.id === todoId ? {...todo, completed: !todo.completed } : todo, 
+  //     ),
   //   }))
   // }
 
@@ -40,9 +50,10 @@ class App extends Component {
       {/* <div>
         <p>Общее кол-во туду:{todos.length}</p>
         <p>Кол-во выполненых туду:</p>
-      </div>
-      <TodoList todos={todos} onDeleteTodo={this.deleteTodo}/> */}
-      <Form onSubmit={this.formSubmitHandler}/>
+      </div> */}
+      {/* <TodoList todos={todos} onDeleteTodo={this.deleteTodo} onToggleCompleted={this.toggleComplited}/> */}
+      {/* <Form onSubmit={this.formSubmitHandler}/> */}
+      <ToDoEditor />
       </>
     )
   }
