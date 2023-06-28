@@ -2,7 +2,7 @@ import React, { Component } from "react";
 // import Counter from "./Counter";
 // import Dropdown from "./Dropdown";
 // import ColorPicker from './ColorPicker';
-// import TodoList from "./TodoList";
+import TodoList from "./TodoList";
 // import Form from "./Form";
 import ToDoEditor from "./ToDoEditor/ToDoEditor"
 import initialTodos from "./todos.json";
@@ -23,37 +23,37 @@ class App extends Component {
   // formSubmitHandler = data => {
   //   console.log('data', data);
   // }
-  // deleteTodo = todoId => {
-  //   this.setState(prevState => ({
-  //     todos: prevState.todos.filter(todo => todo.id !== todoId)
-  //   }))
-  // }
+  deleteTodo = todoId => {
+    this.setState(prevState => ({
+      todos: prevState.todos.filter(todo => todo.id !== todoId)
+    }))
+  }
 
-  // toggleComplited = todoId => {
-  //   console.log('todoId', todoId);
-  //   this.setState(prevState => ({
-  //    todos: prevState.todos.map(todo => 
-  //     todo.id === todoId ? {...todo, completed: !todo.completed } : todo, 
-  //     ),
-  //   }))
-  // }
+  toggleComplited = todoId => {
+    console.log('todoId', todoId);
+    this.setState(prevState => ({
+     todos: prevState.todos.map(todo => 
+      todo.id === todoId ? {...todo, completed: !todo.completed } : todo, 
+      ),
+    }))
+  }
 
   render() {
-    // const {todos} = this.state;
-    // const completedTodos = todos.filter(todo => todo.completed);
-    // console.log(completedTodos.length)
+    const {todos} = this.state;
+    const completedTodos = todos.filter(todo => todo.completed);
+    console.log(completedTodos.length)
     return (
       <>
       {/* <Counter /> */}
       {/* <Dropdown /> */}
       {/* <ColorPicker options={colorPickerOptions} /> */}
-      {/* <div>
+      <div>
         <p>Общее кол-во туду:{todos.length}</p>
         <p>Кол-во выполненых туду:</p>
-      </div> */}
-      {/* <TodoList todos={todos} onDeleteTodo={this.deleteTodo} onToggleCompleted={this.toggleComplited}/> */}
-      {/* <Form onSubmit={this.formSubmitHandler}/> */}
+      </div>
       <ToDoEditor />
+      <TodoList todos={todos} onDeleteTodo={this.deleteTodo} onToggleCompleted={this.toggleComplited}/>
+      {/* <Form onSubmit={this.formSubmitHandler}/> */}
       </>
     )
   }

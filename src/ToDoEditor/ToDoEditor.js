@@ -6,16 +6,22 @@ class ToDoEditor extends Component {
     }
 
 handleChange = event => {
-    
-}    
+    this.setState({message: event.currentTarget.value})
+};
+
+handleSubmit = event => {
+    event.preventDefault();
+    console.log(this.state);
+};
+
 render() {
     return (
-    <form className="ToDoEditor">
+    <form className="ToDoEditor" onSubmit={this.handleSubmit}>
         <textarea 
         value={this.state.message}
         onChange={this.handleChange}
         ></textarea>
-        <button type="button" className="ToDoEditor__button">
+        <button type="submit" className="ToDoEditor__button">
             Save
         </button>
     </form>
