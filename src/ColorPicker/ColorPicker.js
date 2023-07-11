@@ -9,6 +9,7 @@ class ColorPicker extends Component {
   setActiveIndex = index => {
     this.setState({activeOptionIdx: index})
   }
+  
   makeOptionClassName = index => {
     const optionClasses = ["ColorPicker__option"];
     if(index === this.state.activeOptionIdx) {
